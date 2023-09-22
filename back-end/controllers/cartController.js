@@ -61,3 +61,21 @@ exports.add_to_cart = async (req, res, next) => {
     
   }
 };
+
+exports.view_cart = async (req,res,next) => {
+  const token = req.cookies.authcookie;
+  const decoded = jwt.verify(token, process.env.JWT_TOKEN);
+  req.user = decoded;
+
+  if (!token) {
+    return res.status(401).json({ error: 'User not authorized' });
+  }
+
+  try{
+    const cart = await Cart.findOne({ user: user._id });
+  } catch(err){
+
+  }
+
+
+}
