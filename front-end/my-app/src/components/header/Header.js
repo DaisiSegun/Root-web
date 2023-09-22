@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import { useAuthContext } from '../../hooks/useAuthContext'
 import { useLocation } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
+import { useCart } from '../home/CartContext'; 
 
 import Img1 from '../../assets/img/root-full-07.png'
 import Menu1 from '../../assets/img/menu.svg'
@@ -16,7 +17,8 @@ function Header() {
   const { user } = useAuthContext()
   const location = useLocation();
   const { email } = location.state || {};
-  const [{ basket, user1 }, dispatch] = useStateValue();
+  const { cartItemCount } = useCart();
+
   
  
   return (
@@ -35,7 +37,7 @@ function Header() {
         <div className='cart_container'>
           <p className='cart_text'>Cart</p>
           <img src={Cart1}/>
-          <p className='cart_num'> {basket?.length}</p>
+          <p className='cart_num'> {cartItemCount}</p>
         </div>
         </Link>
         
@@ -45,7 +47,7 @@ function Header() {
         <input className='search' type='text' placeholder='Search Root'/>
         <div className='search_icon_container'>
         
-        <Link className='link' to='/searchresult'>
+        <Link className='link' to='/error'>
           <img className='search_icon' src={Search1}/>
         </Link>
         

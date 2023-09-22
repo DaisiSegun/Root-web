@@ -6,14 +6,18 @@ import App from './App';
 import { AuthContextProvider } from './context/AuthContext'
 import { StateProvider } from './StateProvider';
 import reducer, { initialState } from "./reducer";
+import { CartProvider } from './components/home/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <StateProvider initialState={initialState} reducer={reducer}>
+   <CartProvider>
+  <StateProvider initialState={initialState} reducer={reducer}>
     <AuthContextProvider>
-        <App /> 
+      <App />
     </AuthContextProvider>
-    </StateProvider>
+  </StateProvider>
+</CartProvider>
+
   </React.StrictMode>
 );

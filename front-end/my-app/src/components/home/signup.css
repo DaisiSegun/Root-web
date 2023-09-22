@@ -530,30 +530,39 @@ margin-bottom: 1rem;
   cursor: pointer;
 }
 .error-img{
-  width: 21.875rem;
-  height: 23.991rem;
+  width: 16rem;
+  height: 18rem;
   align-self: center;
   object-fit: contain;
+  margin-top: 1rem;
 }
-.error-text {
+.error-text1 {
   color: #000;
   font-family: 'Open Sans';
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 700;
   line-height: 1.875rem;
-  margin-bottom: 1.5rem;
+  text-align: center;
   align-self: center;
   }
-  .error-small {
+  .error-con {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    gap: 1rem;
+  }
+  .error-small1 {
     color: #000;
     font-family: 'Open Sans';
     font-size: 1rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.875rem;
-    margin-bottom: 1.5rem;
-    align-self: center;
+    text-align: center;
+    width: 100%;
   }
  .big-space {
   margin-bottom: 240px;
