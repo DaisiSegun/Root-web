@@ -1,0 +1,222 @@
+* {
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+}
+.product-img {
+  width: 20.4375rem;
+  height: 10.8125rem;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  object-fit: contain;
+  margin-top: 1rem;
+}
+.product-small {
+  color: var(--neutral-800-primary-text, #1A1A1A);
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.product-strong {
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+.product-title {
+  color: var(--neutral-800-primary-text, #1A1A1A);
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.product-price {
+  display: flex;
+}
+.product-des-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.add-to-cart {
+  width: 9.6875rem;
+  height: 2.5rem;
+  border-radius: 0.3125rem;
+  background: #052657;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.75rem;
+  border-style: none;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.deliver-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20.375rem;
+  height: max-content;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: #FFF;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.pickup-delivery{
+  color: var(--neutral-800-primary-text, #1A1A1A);
+  font-family: 'Open Sans';
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+}
+.select-region{
+  color: rgba(26, 26, 26, 0.80);
+  color: gray;
+  font-family: 'Open Sans';
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  align-self: flex-start;
+  margin-left: 1.76rem;
+}
+.deli-price {
+  display: flex;
+  align-items: center;
+  min-width: 4.1875rem;
+  
+}
+.deli-title{
+  color: var(--neutral-800-primary-text, #1A1A1A);
+  font-family: 'Open Sans';
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  margin-left: 1.5rem;
+  min-width: 4.5rem;
+}
+.product-del-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 10rem;
+  align-self: center;
+  justify-self: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+
+  
+}
+.plus-icon{
+  width: 5rem;
+  height: 1.5rem;
+  border-radius: 0.3125rem;
+  background: #052657;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.75rem;
+  border-style: none;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.del-final-con{
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+.product-line{
+  width: 100%;
+  width: 20.4375rem;
+  height: 0.01px;
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+}
+.recomendation-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.rec-img {
+  width: 3.625rem;
+  height: 3.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.125rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10); 
+  object-fit: contain;
+}
+.rec-des-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  
+  
+}
+.rec-name-price {
+  display: flex;
+  margin-top: -0.45rem;
+}
+.rec-title {
+  color: #000;
+  font-family: 'Open Sans';
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  min-width: 11.4375rem;
+}
+.header-deli-text {
+  color: #000;
+  font-family: 'Open Sans';
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  align-self: stretch;
+  margin-left: 1.5rem;
+  }
+  .loading-message {
+    font-size: 12px; /* Adjust font size as needed */
+    text-align: center; /* Center align the text */
+    color: #888; /* Customize the text color */
+    margin: 10px 0;
+    margin-top: 2rem;
+     /* Add margin for spacing */
+    /* Add animation for a subtle loading effect */
+    animation: pulse 1s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }

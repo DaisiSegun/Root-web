@@ -1,0 +1,21 @@
+* {
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+}
+.sug-img {
+  width: 9.6875rem;
+  height: 9.25rem;
+  border-radius: 0.3125rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+ 
+  object-fit: contain;
+}
+
+small {
+  stroke-width: 2px;
+stroke: rgba(0, 0, 0, 0.90);
+font-size: 0.875rem;
+font-weight: 700;
+padding-right: 0.25rem;
+}
