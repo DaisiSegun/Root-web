@@ -25,7 +25,7 @@ import { useLogin } from '../../hooks/useLogin'
        <Link to='/'>
         <img className='sign_up_logo' src='./images/root-full-07.png'/>
         </Link>
-        <h1 className='header_step'>Step 1 of 3</h1>
+        
 
       <div className='sign_up_container'>
         <h5>Login</h5>
@@ -44,9 +44,9 @@ import { useLogin } from '../../hooks/useLogin'
             value={password} 
             /> 
 
-            <Link to='/forgotpassword' className='link'>
+            {/* <Link to='/forgotpassword' className='link'>
             <h1 className='forgot-password'>Forgot Password?</h1>
-            </Link>
+            </Link> */}
             
             {error  && <div className="form-error">{error}</div>}
             {message  && <div className="form-success">{message}</div>}

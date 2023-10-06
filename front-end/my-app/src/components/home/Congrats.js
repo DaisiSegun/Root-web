@@ -10,7 +10,7 @@ function Congrats() {
         <img className='love' src='/images/love.svg'/>
       </div>
       <img className='congrats-gif' src='/images/congrats.gif'/>
-      <p className='place-order'>Your order has been placed and you will recieve a call/message from us soon.<span className='error'> or call this number: 09019971557, 090177615</span></p>
+      <p className='place-order'>Your order has been placed. Please call or message these numbers: 09019971557, 090177615 to confirm your order </p>
       <Link className='link' to='/'>
       <button className='button-blue3'>Go Home</button>
       </Link>

@@ -1,6 +1,5 @@
-// CartContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import axios from 'axios'; // Import axios or your preferred HTTP library
+import axios from 'axios';
 
 const CartContext = createContext();
 
@@ -9,56 +8,75 @@ export function useCart() {
 }
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
-  const [subtotal, setSubtotal] = useState(null);
-  const [error, setError] = useState(null);
-  const [cartItemCount, setCartItemCount] = useState(0); // Initialize cartItemCount to 0
+  const [cartData, setCartData] = useState({
+    cartItems: [],
+    subtotal: null,
+    error: null,
+  });
 
-  // Fetch cart items and subtotal when the component mounts
-  useEffect(() => {
-    // Fetch cart items from the backend API
-    axios.get('/api/cart/items')
+  const addToCart = async (product, quantity) => {
+    try {
+      const response = await axios.post('/api/cart/add', {
+        productID: product._id,
+        quantity,
+      });
+
+      if (response.status === 201) {
+        fetchCartData();
+        window.alert('Product added to cart successfully!');
+      } else {
+        window.alert('Error adding product to cart.');
+      }
+    } catch (error) {
+      setCartData((prevData) => ({
+        ...prevData,
+        error: 'Error adding product to cart',
+      }));
+      console.error(error);
+    }
+  };
+
+  const fetchCartData = () => {
+    axios.get('/api/cart/view')
       .then((response) => {
         const fetchedCartItems = response.data;
-        setCartItems(fetchedCartItems);
-        setCartItemCount(fetchedCartItems.length); // Set cartItemCount to the number of items
+        setCartData((prevData) => ({
+          ...prevData,
+          cartItems: fetchedCartItems,
+        }));
       })
       .catch((err) => {
-        setError('Error fetching cart items');
+        setCartData((prevData) => ({
+          ...prevData,
+          error: 'Error fetching cart items',
+        }));
         console.error(err);
       });
+  };
 
-    // Fetch subtotal from the backend API
-    axios.get('/api/cart/subtotal')
-      .then((response) => {
-        const fetchedSubtotal = response.data.subtotal;
-        setSubtotal(fetchedSubtotal);
-      })
-      .catch((err) => {
-        setError('Error fetching subtotal');
-        console.error(err);
-      });
+  useEffect(() => {
+    fetchCartData();
   }, []);
 
-  // Function to handle removing a cart item
   const handleRemoveCartItem = (itemId) => {
-    // Make an API request to remove the item from the cart
-    axios.delete(`/api/cart/items/${itemId}`)
+    axios.delete(`/api/cart/remove/${itemId}`)
       .then(() => {
-        // Update the cartItems state to remove the deleted item
-        const updatedCartItems = cartItems.filter((item) => item.id !== itemId);
-        setCartItems(updatedCartItems);
-        setCartItemCount(updatedCartItems.length); // Update cartItemCount
+        fetchCartData();
       })
       .catch((err) => {
-        setError('Error removing cart item');
+        setCartData((prevData) => ({
+          ...prevData,
+          error: 'Error removing cart item',
+        }));
         console.error(err);
       });
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, subtotal, error, cartItemCount, handleRemoveCartItem }}>
+    <CartContext.Provider value={{ ...cartData, addToCart, handleRemoveCartItem }}>
       {children}
     </CartContext.Provider>
   );
 }
+
+export { CartContext };

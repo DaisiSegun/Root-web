@@ -6,7 +6,9 @@ dotenv.config({path:"./config.env"})
 const cookieParser = require('cookie-parser');
 const authRoute = require('./routes/index');
 const productRoute = require('./routes/product')
+const orderRoute = require('./routes/order')
 const cartRoute = require('./routes/cart')
+const paymentRoute = require('./routes/payment')
 const bodyParser = require('body-parser');
 
 
@@ -35,4 +37,5 @@ mongoose.connect(process.env.MONGO_URL).then((result) => {
 app.use('/api', authRoute);
 app.use('/api', productRoute);
 app.use('/api', cartRoute);
-
+app.use('/api', paymentRoute);
+app.use('/api', orderRoute);

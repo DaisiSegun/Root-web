@@ -54,7 +54,7 @@ router.post("/create-product", IsAdmin, upload.single("image"), async (req, res)
   }
 });
 
-// router.post('/create-product', IsAdmin, productController.create-product);
+//  router.post('/create-product', IsAdmin, productController.create-product);
 
 {/* no vex 
 router.get("/view-all", async (req, res) => {

@@ -37,6 +37,9 @@ import OrderHistory from './components/home/OrderHistory';
 import SendOtp from './components/home/SendOtp';
 import SignUp3 from './components/home/SignUp3';
 import ProductList from './components/home/ProductList';
+import APITest from './components/home/APITest';
+import ErrorProfile from './components/home/ErrorProfile';
+
 
 
 
@@ -47,6 +50,7 @@ function App() {
   return (
     <div >
       <Router>
+    
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/signup' element={<SignUp/>}/>
@@ -82,9 +86,12 @@ function App() {
           <Route path='/sendotp' element={<SendOtp/>}/>
           <Route path='/try' element={<SignUp3/>}/>
           <Route path='/products/:categories' element={<ProductList/>}/>
+          <Route path='/apitest' element={<APITest/>}/>
+          <Route path='/error-profile' element={<ErrorProfile/>}/>
           
           
         </Routes>
+      
       </Router>
     </div>
   );

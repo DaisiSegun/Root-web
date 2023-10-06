@@ -1,15 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './main.css'
 import Header from '../header/Header'
 import { useLogout } from '../../hooks/useLogout'
+import axios from 'axios';
+
 function Menu() {
 
   const { logout } = useLogout()
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      // Make a POST request to the server's /logout route
+      const response = await axios.post('/api/logout');
 
-  const handleClick = () => {
-    logout()
-  }
+      // Handle the response if needed
+      console.log('Logout successful', response);
+
+      // Check if the logout was successful and navigate to the home page
+      if (response.status === 200) {
+        // Redirect to the home page
+        navigate('/');
+        logout();
+      }
+    } catch (error) {
+      console.error('Logout failed', error);
+    }
+  };
   return (
     <div className='main'>
     <div className='menu-container'>
@@ -28,7 +45,7 @@ function Menu() {
           </div>
           
           
-          <button onClick={handleClick} className='nav-button'>
+          <button onClick={handleLogout} className='nav-button'>
             <span className='nav-tit'>Logout</span>
             <img className='nav-icon-04' src='./images/nav-blue.svg'/>
           </button>

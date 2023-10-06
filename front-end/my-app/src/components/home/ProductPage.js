@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './productpage.css';
-
 import Header from '../header/Header';
 import { useLocation } from 'react-router-dom';
+import { useCart } from './CartContext'; 
 
 function ProductPage() {
   const location = useLocation();
@@ -11,28 +11,31 @@ function ProductPage() {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
 
-  const addToCart = async (product) => {
-    console.log(product)
+
+ const handleAddToCart = async () => {
+
     try {
-    
-     if ( product?._id) {
-   
-        await axios.post('/api/cart/add', {
-          productID: product._id,
+      const response = await axios.post('/api/cart/add', {
+        productID: product._id,
         quantity: 1,
-        });
-        // Assuming a successful response means the item was added to the cart.
-        alert('Product added to cart successfully!');
+      });
+
+      console.log('Product added to cart:', response);
+
+      if (response.status === 201) {
+        setError(null);
+        window.alert('Product added to cart successfully!');
       } else {
-        alert('Product data is missing productId or quantity.');
+        window.alert('Error adding product to cart.');
       }
     } catch (error) {
-      setError('Error adding product to cart');
+      setError('Error adding product to cart: ' + error.response?.data.error || 'An error occurred.');
       console.error(error);
     }
   };
 
   useEffect(() => {
+    console.log(product)
     const getProduct = async () => {
       try {
         const response = await axios.get(`/api/view-single/${id}`);
@@ -65,7 +68,7 @@ function ProductPage() {
               <small className='product-small'>₦</small>
               <strong className='product-strong'>{product.price}</strong>
             </div>
-            <button className='add-to-cart' onClick={()=> addToCart(product)}>
+            <button className='add-to-cart' onClick={handleAddToCart}>
               Add to Cart
             </button>
           </>

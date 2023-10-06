@@ -34,7 +34,11 @@ exports.register = async (req, res, next) => {
       
       if (phoneNumber.length > 14) {
         // Check if the length of phoneNumber as a string is greater than 14
-        return res.status(400).json({ error: 'Phone number is too long. or replace +234 with 1st 0 ' });
+        return res.status(400).json({ error: 'Phone number is too long. or replace 1st 0 with +234  ' });
+      }
+      if (phoneNumber.length < 14) {
+        // Check if the length of phoneNumber as a string is greater than 14
+        return res.status(400).json({ error: 'Phone number is too short. or replace 1st 0 with +234 ' });
       }
   
       const salt = await bcrypt.genSalt(10);
@@ -108,7 +112,7 @@ exports.register = async (req, res, next) => {
       const user = await User.findOne({ email: req.body.email });
   
       if (!user) {
-        return res.status(401).json({ message: "Invalid mobile" });
+        return res.status(401).json({ message: "User not found" });
       }
   
       const validPass = await bcrypt.compare(req.body.password, user.password);
@@ -223,4 +227,15 @@ exports.verifyOtp = async (req,res) => {
     else {
       res.status(400).send("invalid")
     }
+}
+exports.logout = (req, res) => {
+  try {
+    // Clear the authentication cookie
+    res.clearCookie('authcookie');
+
+    res.status(200).json({ message: "Logout successful" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
 }

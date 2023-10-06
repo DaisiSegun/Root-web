@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Categories from './Categories'
 import Product from './Product'
 import axios from "axios";
-
+import { shuffle } from 'lodash';
 function Main({category}) {
   const [products, setProducts] = useState([]);
  
@@ -17,7 +17,9 @@ function Main({category}) {
             ? `/api/view-all?category=${category}`
             : "/api/view-all"
         );
-        setProducts(res.data);
+        const shuffledProducts = shuffle(res.data); // Shuffle the products
+        const selectedProducts = shuffledProducts.slice(0, 4); // Select the first 4 products from the shuffled array
+        setProducts(selectedProducts);
       } catch (err) {}
     };
 

@@ -117,6 +117,7 @@
 }
 .bottom {
   margin-bottom: 1.5rem;
+ 
 }
 .split-customer {
   display: flex;
@@ -200,3 +201,40 @@
  
   opacity: 0.9;
 }
+.pagination-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style for the "Previous" button */
+.pagination-buttons .previous-button {
+  background-color:  white; /* Change this color to your desired color */
+ 
+  color: #1172CC;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #1172CC;
+  border-width: 1px;
+}
+
+/* Style for the "Next" button */
+.pagination-buttons .next-button {
+  background-color: #1172CC; /* Change this color to your desired color */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination-buttons button:disabled {
+  background-color: #ccc; /* Light gray for disabled buttons */
+  cursor: not-allowed;
+  color: white;
+  border: none;
+}
+

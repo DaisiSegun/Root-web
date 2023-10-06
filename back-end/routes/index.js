@@ -7,6 +7,7 @@ router.post('/register', userController.register);
 
 // Login
 router.post('/login', userController.login);
+router.post('/logout', userController.logout);
 
 router.use(verifyUserToken)
 

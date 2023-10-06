@@ -181,6 +181,7 @@
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
+    align-self: center;
   }
   .button-blue2 {
     width: 20.4375rem;
@@ -443,10 +444,10 @@ line-height: 2.5rem;
   font-family: Open Sans;
   font-size: 0.75rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.375rem;
   letter-spacing: -0.0255rem;
-  width: 18rem;
+  width: 12rem;
   min-height: 3.5625rem;
 }
 .button-blue3 {
@@ -629,3 +630,8 @@ margin-bottom: 1rem;
   font-weight: 600;
   align-self: center;
  }
+.your-total{
+  font-weight: 500;
+  color: darkgreen;
+}
+ 
