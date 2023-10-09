@@ -67,7 +67,7 @@ exports.initiate_payments = async (req, res) => {
         tx_ref: generateRootString(),
         amount: amount,
         currency: "NGN",
-        redirect_url: "https://walrus-app-quuss.ondigitalocean.app/congrats",
+        redirect_url: "https://wwws.rootgroup.org/congrats",
         meta: {
           consumer_id: user._id,
           sender: "Root Groups"
