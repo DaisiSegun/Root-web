@@ -61,7 +61,7 @@ function ShippingAddress() {
       // Handle the response from the billing_address API
       if (response.status === 200) {
         // Billing address saved successfully, you can take further actions here
-        alert('Billing address saved successfully');
+        // alert('Billing address saved successfully');
         
         // After saving the billing address, initiate the payment
         initiatePayment();
