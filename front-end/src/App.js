@@ -39,6 +39,11 @@ import SignUp3 from './components/home/SignUp3';
 import ProductList from './components/home/ProductList';
 import APITest from './components/home/APITest';
 import ErrorProfile from './components/home/ErrorProfile';
+import Login from './admin/Login';
+import Dashboard from './admin/Dashboard';
+import UploadRepair from './admin/UploadRepair';
+import Order from './admin/Order';
+import AllOrder from './admin/AllOrder';
 
 
 
@@ -88,6 +93,11 @@ function App() {
           <Route path='/products/:categories' element={<ProductList/>}/>
           <Route path='/apitest' element={<APITest/>}/>
           <Route path='/error-profile' element={<ErrorProfile/>}/>
+          <Route path='/admin' element={<Login/>}/>
+          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/upload-repair' element={<UploadRepair/>}/>
+          <Route path='/order' element={<Order/>}/>
+          <Route path='/allorder' element={<AllOrder/>}/>
           
           
         </Routes>

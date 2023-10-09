@@ -238,3 +238,25 @@
   border: none;
 }
 
+.red-box {
+  background-color: #ffcccc; /* Lighter red background color */
+  color: red; /* Red text color */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 1.45rem;
+  margin-right: 1.45rem;
+  font-size: 14px;
+}
+.red-box2 {
+  background-color: #ffcccc; /* Lighter red background color */
+  color: red; /* Red text color */
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 1.45rem;
+  margin-right: 1.45rem;
+  font-size: 8px;
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+}

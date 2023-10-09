@@ -11,13 +11,14 @@ function ShippingAddress() {
 
   const [formData, setFormData] = useState({
     state: '',
-    LGA: '',
+    lga: '',
     city: '',
-    street: '',
-    altPhone01: '',
-    altPhone02: '',
+    house_address: '',
+    alternatePhoneNumber: '',
+    alternatePhoneNumber2: '',
   });
 
+ console.log(formData.lga, formData.city);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -94,8 +95,8 @@ function ShippingAddress() {
           <input
             type='text'
             placeholder='Local Government Area'
-            name='LGA'
-            value={formData.LGA}
+            name='lga'
+            value={formData.lga}
             onChange={handleInputChange}
           />
 
@@ -112,8 +113,8 @@ function ShippingAddress() {
           <input
             type='text'
             placeholder='Street Name & Number'
-            name='street'
-            value={formData.street}
+            name='house_address'
+            value={formData.house_address}
             onChange={handleInputChange}
           />
 
@@ -121,8 +122,8 @@ function ShippingAddress() {
           <input
             type='number'
             placeholder='Alternate phone number 01'
-            name='altPhone01'
-            value={formData.altPhone01}
+            name='alternatePhoneNumber'
+            value={formData.alternatePhoneNumber}
             onChange={handleInputChange}
           />
 
@@ -130,8 +131,8 @@ function ShippingAddress() {
           <input
             type='number'
             placeholder='Alternate phone number 02 (optional)'
-            name='altPhone02'
-            value={formData.altPhone02}
+            name='alternatePhoneNumber2'
+            value={formData.alternatePhoneNumber2}
             onChange={handleInputChange}
           />
 

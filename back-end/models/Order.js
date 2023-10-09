@@ -19,9 +19,7 @@ const orderSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-    alternatePhoneNumber: {
-      type: String,
-    },
+  
   },
   orderedItems: [
     {
@@ -32,9 +30,11 @@ const orderSchema = new mongoose.Schema({
   ],
   shippingAddress: {
     state: String,
-    LGA: String,
+    lga: String,
     city: String,
     address: String,
+    alternatePhoneNumber: String,
+    alternatePhoneNumber2: String,
   },
   totalPricePaid: {
     type: Number,

@@ -67,7 +67,7 @@ exports.initiate_payments = async (req, res) => {
         tx_ref: generateRootString(),
         amount: amount,
         currency: "NGN",
-        redirect_url: "https://ef58-105-113-92-182.ngrok-free.app/congrats/api/v1/flutterwave",
+        redirect_url: "https://walrus-app-quuss.ondigitalocean.app/congrats",
         meta: {
           consumer_id: user._id,
           sender: "Root Groups"
@@ -93,12 +93,12 @@ exports.initiate_payments = async (req, res) => {
   }
 };
 
-let storedData = {};
+
 
 exports.billing_address = async (req, res) => {
   try {
-    const { state, LGA, city, street, altPhone01, altPhone02 } = req.body;
-    storedData = { state, LGA, city, street, altPhone01, altPhone02};
+    const { state, lga, city, house_address, alternatePhoneNumber, alternatePhoneNumber2 } = req.body;
+    storedData = { state, lga, city, house_address, alternatePhoneNumber, alternatePhoneNumber2};
     // Do something with storedData...
     res.status(200).json({ message: 'Billing address saved successfully' });
     console.log(storedData);
@@ -118,8 +118,8 @@ exports.flw_webhook = async (req, res) => {
 
 exports.get_payment_data = async (req, res) => {
   const { status, tx_ref, transaction_id } = req.query
-
-  if (status == 'successful'){
+  console.log(status, tx_ref, transaction_id )
+  if (status == 'completed'){
     try{
         
       const token = req.cookies.authcookie;
@@ -154,8 +154,10 @@ exports.get_payment_data = async (req, res) => {
 
       const state = storedData.state;
       const address = storedData.house_address;
-      const LGA = storedData.Lga;
+      const lga = storedData.lga;
       const city = storedData.city;
+      const alternatePhoneNumber = storedData.alternatePhoneNumber;
+      const  alternatePhoneNumber2 = storedData.alternatePhoneNumber2;
 
       const order = new Order({
         orderId: generateOrderId(),
@@ -167,9 +169,11 @@ exports.get_payment_data = async (req, res) => {
         orderedItems: ordered,
         shippingAddress: {
           state,
-          LGA,
+          lga,
           city,
-          address
+          address,
+          alternatePhoneNumber,
+          alternatePhoneNumber2
         },
         totalPricePaid: amount
       })

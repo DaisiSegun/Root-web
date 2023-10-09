@@ -24,7 +24,7 @@ function ProductPage() {
 
       if (response.status === 201) {
         setError(null);
-        window.alert('Product added to cart successfully!');
+        window.alert('Product added to cart successfully! Click the cart button');
       } else {
         window.alert('Error adding product to cart.');
       }

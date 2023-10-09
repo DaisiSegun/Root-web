@@ -36,10 +36,10 @@ exports.register = async (req, res, next) => {
         // Check if the length of phoneNumber as a string is greater than 14
         return res.status(400).json({ error: 'Phone number is too long. or replace 1st 0 with +234  ' });
       }
-      if (phoneNumber.length < 14) {
-        // Check if the length of phoneNumber as a string is greater than 14
-        return res.status(400).json({ error: 'Phone number is too short. or replace 1st 0 with +234 ' });
-      }
+      // if (phoneNumber.length < 14) {
+      //   // Check if the length of phoneNumber as a string is greater than 14
+      //   return res.status(400).json({ error: 'Phone number is too short. or replace 1st 0 with +234 ' });
+      // }
   
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);

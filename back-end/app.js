@@ -10,11 +10,13 @@ const orderRoute = require('./routes/order')
 const cartRoute = require('./routes/cart')
 const paymentRoute = require('./routes/payment')
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(cors());
 
 
 // mongoose connection

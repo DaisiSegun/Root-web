@@ -6,38 +6,33 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Cart() {
-  const { cartItems, handleRemoveCartItem } = useContext(CartContext);
+  const { cartItems, handleRemoveCartItem, fetchCartData } = useContext(CartContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
   console.log(cartItems);
 
-  const fetchCartData = () => {
-    axios
-      .get('/api/cart/view')
-      .then((response) => {
-        // Update cart data here
-      })
-      .catch((err) => {
-        setError('No cart data: ' + err.response?.data.error || 'An error occurred.');
-        console.error(err);
-      });
-  };
+  // const fetchCartData = () => {
+  //   axios
+  //     .get('/api/cart/view')
+  //     .then((response) => {
+  //       // setCartData({
+  //       //   cartItems: response.data, // Assuming the API response contains the cart items
+  //       //   subtotal: response.data.cartTotal, // Assuming cartTotal is in the response
+  //       //   error: null, // Reset error
+  //       // });
+  //     })
+  //     .catch((err) => {
+  //       setError('No cart data: ' + err.response?.data.error || 'An error occurred.');
+  //       console.error(err);
+  //     });
+  // };
 
   // Use useEffect to fetch cart data when the component mounts
   useEffect(() => {
     fetchCartData();
   }, []);
 
-  useEffect(() => {
-    // Check if the page has already been refreshed
-    const hasRefreshed = localStorage.getItem('hasRefreshed');
 
-    if (!hasRefreshed) {
-      // If the page hasn't been refreshed yet, refresh it once
-      localStorage.setItem('hasRefreshed', 'true');
-      window.location.reload();
-    }
-  }, []);
 
   return (
     <div className='main'>
@@ -45,6 +40,9 @@ function Cart() {
       <hr className='line' />
       <h5 className='search-header'>Cart</h5>
       <div>
+      {/* <div className='red-box2'>
+  <h3>Please Reload or Refresh this page if your cart is not updated.</h3>
+  </div> */}
         {cartItems.selectedProducts && cartItems.selectedProducts.length > 0 ? (
           cartItems.selectedProducts.map((item) => (
             <CartItem key={item._id} item={item} />

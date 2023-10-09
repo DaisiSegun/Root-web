@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './main.css';
 import Product from './Product';
 import axios from 'axios';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 function Screen({ category }) {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4; // Change this based on your preference
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const getProducts = async () => {
@@ -40,17 +42,31 @@ function Screen({ category }) {
 
   return (
     <div>
+      {!user && (
+        <div className='red-box'>
+          <h3>Please Register to view Categories. Thank you</h3>
+        </div>
+      )}
+
       <div className='main-row'>
         {productsToDisplay.map((item) => (
           <Product item={item} key={item.id} />
         ))}
       </div>
 
-      <div className="pagination-buttons">
-        <button  className="previous-button" onClick={handlePreviousPage} disabled={currentPage === 1}>
+      <div className='pagination-buttons'>
+        <button
+          className='previous-button'
+          onClick={handlePreviousPage}
+          disabled={currentPage === 1}
+        >
           Previous
         </button>
-        <button  className="next-button" onClick={handleNextPage} disabled={endIndex >= matchingProducts.length}>
+        <button
+          className='next-button'
+          onClick={handleNextPage}
+          disabled={endIndex >= matchingProducts.length}
+        >
           Next
         </button>
       </div>
