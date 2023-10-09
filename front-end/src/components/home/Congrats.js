@@ -47,7 +47,7 @@ console.log( apiUrl)
       </div>
       <img className='congrats-gif' src='/images/congrats.gif' alt="Congrats GIF" />
       <p className='place-order'>
-        Your order has been placed. Please call or message these numbers: 09019971557, 090177615 to confirm your order
+        Your order has been placed. Please call or message these numbers: +2349019971557, +2348069100884 to confirm your order
       </p>
       <button className='button-blue3' onClick={handleContinueClick}>Continue</button>
     </div>
