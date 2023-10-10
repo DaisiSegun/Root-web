@@ -19,7 +19,7 @@ function Congrats() {
     const transaction_id = decodeURIComponent(urlParams.get('transaction_id'));
 
     // Construct the API URL with query parameters
-    const apiUrl = `https://walrus-app-quuss.ondigitalocean.app/api/v1/flutterwave?status=${status}&tx_ref=${tx_ref}&transaction_id=${transaction_id}`;
+    const apiUrl = `https://www.rootgroup.org/api/v1/flutterwave?status=${status}&tx_ref=${tx_ref}&transaction_id=${transaction_id}`;
 console.log( status, tx_ref, transaction_id)
 console.log( apiUrl)
     // Make an API GET request to the constructed URL
@@ -47,7 +47,7 @@ console.log( apiUrl)
       </div>
       <img className='congrats-gif' src='/images/congrats.gif' alt="Congrats GIF" />
       <p className='place-order'>
-        Your order has been placed. Please call or message these numbers: +2349019971557, +2348069100884 to confirm your order
+        Your order has been placed. Please call or message these numbers: <span className='call-blue'> +2349019971557, +2348069100884</span> to confirm your order
       </p>
       <button className='button-blue3' onClick={handleContinueClick}>Continue</button>
     </div>
