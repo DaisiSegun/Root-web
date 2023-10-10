@@ -24,25 +24,28 @@ function CustomerService() {
           </button>
           
           
-        
-         
-          <button className='nav-button2'>
+          <a href="whatsapp://send?phone=2349019971557">
+        <button className='nav-button2'>
           <div className='split-customer1'>
-            <span>Reach us on whatsapp</span>
-            <img src='/images/chat-us.svg'/>
+            <span className='nav-tit'>Call Us </span>
+            <img src='/images/call-us.svg' alt='Call Us Icon' />
             <span className='nav-reach'>+2349019971557</span>
-            </div>
-          </button>
+            <span className='nav-reach'>+2348069100884</span>
+          </div>
+        </button>
+      </a>
+
           
-       
-          
-          <button className='nav-button2'>
-          <div className='split-customer1'>
-            <span className='nav-tit'>Send us an Email</span>
-            <img src='/images/email-us.svg'/> 
-            <span className='nav-reach'>rootgotyou@gmail.com</span>
-            </div>
-          </button>
+          <a href="mailto:rootsgotyou@gmail.com">
+            <button className='nav-button2'>
+              <div className='split-customer1'>
+                <span className='nav-tit'>Send us an Email</span>
+                <img src='/images/email-us.svg' alt='Email Us Icon'/> 
+                <span className='nav-reach'>rootsgotyou@gmail.com</span>
+              </div>
+            </button>
+          </a>
+
          
           
             {/*<Link className='link' to='/feedback'>
