@@ -16,8 +16,8 @@ export const categories = [
   },
   {
     id: 4,
-    title: "Rear Glass",
-    cat: "rear-glass",
+    title: "Back Glass",
+    cat: "back-glass",
   },
 ];
 

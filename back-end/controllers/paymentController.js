@@ -67,7 +67,7 @@ exports.initiate_payments = async (req, res) => {
         tx_ref: generateRootString(),
         amount: amount,
         currency: "NGN",
-        redirect_url: "https://wwws.rootgroup.org/congrats",
+        redirect_url: "https://www.rootgroup.org/congrats",
         meta: {
           consumer_id: user._id,
           sender: "Root Groups"

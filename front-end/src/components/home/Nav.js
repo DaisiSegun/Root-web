@@ -25,9 +25,9 @@ function Nav() {
             <img className='nav-icon-02' src='./images/nav-blue.svg'/>
           </button>
           </Link>
-          <Link className='link' to='/rearglass'>
+          <Link className='link' to='/backglass'>
           <button className='nav-button'>
-            <span>Rear Glass</span>
+            <span>Back Glass</span>
             <img className='nav-icon-03' src='./images/nav-blue.svg'/>
           </button>
           </Link>

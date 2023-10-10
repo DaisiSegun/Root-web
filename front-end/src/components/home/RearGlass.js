@@ -7,7 +7,7 @@ function RearGlass() {
     <div className='main'>
     <Header2/>
     <hr className='line'></hr>
-    <h5 className='cat-header'>Rear Glass</h5>
+    <h5 className='cat-header'>Back Glass</h5>
     <div className='cat-row'>
       <ScreenCat
         title={'Iphone 11 Rear Glass'}

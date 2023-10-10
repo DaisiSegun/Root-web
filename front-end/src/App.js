@@ -70,7 +70,7 @@ function App() {
           <Route path='/screen' element={<Screen/>}/>
           <Route path='/battery' element={<Battery/>}/>
           <Route path='/chargingport' element={<ChargingPort/>}/>
-          <Route path='/rearglass' element={<RearGlass/>}/>
+          <Route path='/backglass' element={<RearGlass/>}/>
           <Route path='/searchresult' element={<Search/>}/>
           <Route path='/menu' element={<Menu/>}/>
           <Route path='/customerservice' element={<CustomerService/>}/>
