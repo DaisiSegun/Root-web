@@ -197,7 +197,12 @@ exports.get_payment_data = async (req, res) => {
         from: 'teniolasobande04@gmail.com', // Replace with your Gmail email
         to: 'rootsgotyou@gmail.com', // Replace with the recipient's email
         subject: 'New Order Created',
-        text: `A new order ${newOrder.orderId} has been created for ${newOrder.customer.name}, for the following items: ${newOrder.orderedItems}`,
+        text: `A new order ${newOrder.orderId} has been created for ${newOrder.customer.name}.\n\n` +
+            `Shipping Address: ${address}, ${city}, ${lga}, ${state}\n\n` +
+            `Phone Number: ${newOrder.customer.phoneNumber}\n\n` +
+            `Alternate Phone Number: ${alternatePhoneNumber}\n\n` +
+            `Alternate Phone Number 2: ${alternatePhoneNumber2}\n\n` + // Include the alternate phone number 2
+            `For the following items: ${newOrder.orderedItems}`,
       };
       
       // Send the email
