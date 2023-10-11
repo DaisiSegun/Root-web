@@ -195,7 +195,7 @@ exports.get_payment_data = async (req, res) => {
       
       const mailOptions = {
         from: 'teniolasobande04@gmail.com', // Replace with your Gmail email
-        to: 'rootsgotyou@gmail.com', // Replace with the recipient's email
+        to: ['rootsgotyou@gmail.com', 'daissegun096@gmail.com'], // Replace with the recipient's email
         subject: 'New Order Created',
         text: `A new order ${newOrder.orderId} has been created for ${newOrder.customer.name}.\n\n` +
             `Shipping Address: ${address}, ${city}, ${lga}, ${state}\n\n` +
