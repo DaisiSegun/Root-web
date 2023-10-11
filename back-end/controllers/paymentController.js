@@ -183,25 +183,29 @@ exports.get_payment_data = async (req, res) => {
       console.log(newOrder)
 
       const transporter = nodemailer.createTransport({
-        service: 'Gmail', // Change this to your email service provider
+        service: 'Gmail',
         auth: {
-          user: 'teniolasobande04@gmail.com', // Replace with your email
-          pass: process.env.EMAIL_PASSWORD, // Replace with your email password
+          user: 'teniolasobande04@gmail.com', // Replace with your Gmail email
+          pass: 'rtil lpbr vrqp xuyc', // Replace with your Gmail password or app password
+        },
+        tls: {
+          rejectUnauthorized: false, // Ignore certificate validation errors
         },
       });
-
+      
       const mailOptions = {
-        from: 'teniolasobande04@gmail.com',
-        to: 'daissegun096@gmail.com', // Replace with the recipient's email
+        from: 'teniolasobande04@gmail.com', // Replace with your Gmail email
+        to: 'rootsgotyou@gmail.com', // Replace with the recipient's email
         subject: 'New Order Created',
-        text: `a new order ${newOrder.orderId}, has been created for ${newOrder.customer.name}, for the following items ${newOrder.orderedItems}`,
+        text: `A new order ${newOrder.orderId} has been created for ${newOrder.customer.name}, for the following items: ${newOrder.orderedItems}`,
       };
-
+      
+      // Send the email
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          console.error(error);
+          console.error('Error sending email:', error);
         } else {
-          console.log('Email sent: ' + info.response);
+          console.log('Email sent:', info.response);
         }
       });
 
