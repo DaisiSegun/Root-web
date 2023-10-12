@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { useCart } from '../home/CartContext';
 
-import Img1 from '../../assets/img/rootdarklogo.png'
+import Img1 from '../../assets/img/root-full-07.png'
 import Menu1 from '../../assets/img/menu.svg'
 import Cart1 from '../../assets/img/cart.svg'
 import Search1 from '../../assets/img/search.svg'

@@ -36,19 +36,18 @@ cursor: pointer;
 
 }
 .logo {
-display: flex;
-object-fit: contain;
-width: 100%;
-height: 100%;
-justify-content: center;
-align-items: center;
-margin-bottom: -3rem;
-margin-top: -3rem;
-margin-left: 1.1rem;
-
-
-cursor: pointer;
-}
+  display: flex;
+  object-fit: contain;
+  width: 80%;
+  height: 110px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -26px;
+  margin-bottom: -26px;
+  margin-left: 2.4rem;
+  
+  cursor: pointer;
+  }
 
 .cart_container {
   display: flex;

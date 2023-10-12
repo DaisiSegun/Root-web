@@ -76,6 +76,9 @@ function ProductPage() {
           <p className='loading-message'>{error || 'Loading product details...'}</p>
         )}
       </div>
+      <div className='red-box5'>
+  <h3>Please we are only available in Lagos for now</h3>
+</div>
       <div className='space'></div>
     </div>
   );

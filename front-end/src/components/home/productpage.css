@@ -220,3 +220,17 @@
       opacity: 0.6;
     }
   }
+  .red-box5 {
+    background-color: #ffeeee; /* Lighter red background color */
+    color: #b32e2e; /* Red text color */
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 1.45rem;
+    margin-right: 1.45rem;
+  
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-weight: lighter;
+    font-size: 8px;
+  }
