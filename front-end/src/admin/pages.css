@@ -399,6 +399,17 @@ width: min-content;
   line-height: 2.5rem;
   margin-left: 2rem;
 }
+.upload-text2{
+  width: 22.25rem;
+  height: 3rem;
+  color: #000;
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5rem;
+ 
+}
 .upload-row {
   display: flex;
   align-items: center;
@@ -910,4 +921,20 @@ a {
   margin-left: 2rem;
   margin-top: 1.5rem;
   margin-bottom: -1.5rem;
+}
+.price-calculator {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.price-button {
+  padding: 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  border-color: #3B95ED;
+  color: #3B95ED;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  background-color: white;
 }

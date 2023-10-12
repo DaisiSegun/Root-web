@@ -44,6 +44,7 @@ import Dashboard from './admin/Dashboard';
 import UploadRepair from './admin/UploadRepair';
 import Order from './admin/Order';
 import AllOrder from './admin/AllOrder';
+import PrivacyPolicy from './components/home/PrivacyPolicy';
 
 
 
@@ -98,6 +99,7 @@ function App() {
           <Route path='/upload-repair' element={<UploadRepair/>}/>
           <Route path='/order' element={<Order/>}/>
           <Route path='/allorder' element={<AllOrder/>}/>
+          <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
           
           
         </Routes>

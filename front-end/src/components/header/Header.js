@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useStateValue } from "../../StateProvider";
 import { useCart } from '../home/CartContext';
 
-import Img1 from '../../assets/img/root-full-07.png'
+import Img1 from '../../assets/img/rootdarklogo.png'
 import Menu1 from '../../assets/img/menu.svg'
 import Cart1 from '../../assets/img/cart.svg'
 import Search1 from '../../assets/img/search.svg'
@@ -24,11 +24,11 @@ function Header() {
   return (
     <div className='header'>
       <div className='section_top'>
-        <Link to='/menu'>
+        <Link className='link' to='/menu'>
           <img className='menu' src={Menu1} />
         </Link>
 
-        <Link to='/'>
+        <Link className='link' to='/'>
           <img className='logo' src={Img1} />
         </Link>
 
@@ -60,8 +60,9 @@ function Header() {
           <Link to='/signin' className='link'>
             <button className='dark_button'>Sign In</button>
           </Link>
+         
+          <h1 className='hello'>Hello </h1>
 
-          <h1 className='hello'>Hello</h1>
           {email && <p className='helloo'>Email: {email}</p>}
           <Link to='/signup' className='link'>
             <button className='light_button'>Register</button>
@@ -71,7 +72,7 @@ function Header() {
       {user && (
         <div className='section_bottom2'>
           <div className='hello-con'>
-            <h1 className='hello'> Hello</h1>
+            <h1 className='hello'> Hello  <span style={{ fontWeight: '500' }}>{user.name}</span></h1>
           </div>
 
           <Link to='/error-profile' className='link'>

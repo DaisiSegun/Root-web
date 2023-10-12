@@ -51,6 +51,16 @@
     margin-top: -1.6rem;
     margin-bottom: -2rem;
   }
+  .sign_up_logo1 {
+    display: flex;
+    width: 7.3125rem;
+    height: 7.0625rem;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    margin-top: -1.6rem;
+    margin-bottom: -2.8rem;
+  }
 
   
   
@@ -172,6 +182,24 @@
     background: var(--primary-blue-01, #1172CC);
     border-style: none;
     margin-top: 2.5rem;
+    margin-bottom: 1.12rem;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    align-self: center;
+  }
+  .button-blue5 {
+    width: 20.4375rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    background: var(--primary-blue-01, #1172CC);
+    border-style: none;
+    margin-top: 0.5rem;
     margin-bottom: 1.12rem;
     color: #FFF;
     text-align: center;
@@ -641,4 +669,15 @@ margin-bottom: 1rem;
   font-size: 0.75rem;
 
 
+}
+.privacy-policy {
+ display: flex;
+  line-height: 1.5;
+  flex-direction: column;
+  column-gap: 8px;
+  padding: 16px;
+}
+.privacy-list{
+  font-size: 8px;
+  font-weight: 400;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import './pages.css'
+import PriceCalculator from './PriceCalculator';
 
 function UploadRepair() {
   const [formData, setFormData] = useState({
@@ -185,7 +186,7 @@ function UploadRepair() {
             <button className='see-preview'>See Preview</button>
           </div>
         </div>
-
+<PriceCalculator/>
         {error && <p className='error-message4'>{error}</p>}
       </div>
     </div>

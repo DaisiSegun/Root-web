@@ -97,7 +97,7 @@ function SignUp() {
             
 
             
-            <p className='terms'>By signing up you have agreed to <span className='terms_condition'>Our Terms of Use And Privacy Notice</span> </p>
+            <p className='terms'>By signing up you have agreed to <Link className='link' to='/privacy-policy'> <span className='terms_condition'>Our Terms of Use And Privacy Notice</span></Link> </p>
             {error  && <div className="form-error">{error}</div>}
             {message  && <div className="form-success">{message}</div>}
             <input disabled ={isLoading} type='submit' value={'Register'} className='button-blue' ></input>

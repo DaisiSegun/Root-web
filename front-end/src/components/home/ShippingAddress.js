@@ -79,7 +79,7 @@ function ShippingAddress() {
       </Link>
       <div className='space3'></div>
       <div className='sign_up_container'>
-        <h5>What's your Address & Alt Number</h5>
+        <h5>What's your Address</h5>
         <h1 className='phone-number-note'>*Your alternate number can be your additional number, family, or close friend</h1>
         <form onSubmit={handleSubmit} className='form'>
           <label>State</label>
@@ -109,10 +109,10 @@ function ShippingAddress() {
             onChange={handleInputChange}
           />
 
-          <label>House name & Street Number</label>
+          <label>Street Name & House Number</label>
           <input
             type='text'
-            placeholder='Street Name & Number'
+            placeholder='Street Name & House Number'
             name='house_address'
             value={formData.house_address}
             onChange={handleInputChange}
@@ -136,7 +136,7 @@ function ShippingAddress() {
             onChange={handleInputChange}
           />
 
-          <p className='your-total'>Your payment total price: ₦{total || 0}</p>
+          <p className='your-total'>Your payment total: ₦{total || 0}</p>
           <button type='submit' className='button-blue'>
             Continue
           </button>
