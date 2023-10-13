@@ -686,3 +686,10 @@ margin-bottom: 1rem;
   font-size: 8px;
   font-weight: 400;
 }
+/* Style for the disabled "Continue" button */
+.button-blue:disabled {
+  background-color: #cccccc; /* Light gray */
+  color: #666666; /* Darker gray for text */
+  cursor: not-allowed; /* Change the cursor to not-allowed */
+  /* You can add other styles as needed */
+}

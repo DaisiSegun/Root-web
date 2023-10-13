@@ -17,7 +17,17 @@ function ShippingAddress() {
     alternatePhoneNumber: '',
     alternatePhoneNumber2: '',
   });
+  const [formComplete, setFormComplete] = useState(false); // State to track form completeness
 
+  const checkFormCompleteness = () => {
+    const { state, lga, city, house_address, alternatePhoneNumber } = formData;
+    const requiredFields = [state, lga, city, house_address, alternatePhoneNumber];
+
+    // Check if all required fields are filled
+    const isFormComplete = requiredFields.every((field) => field.trim() !== '');
+
+    setFormComplete(isFormComplete);
+  };
  console.log(formData.lga, formData.city);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,6 +35,7 @@ function ShippingAddress() {
       ...formData,
       [name]: value,
     });
+    checkFormCompleteness();
   };
 
   const initiatePayment = async () => {
@@ -137,7 +148,7 @@ function ShippingAddress() {
           />
 
           <p className='your-total'>Your payment total: ₦{total || 0}</p>
-          <button type='submit' className='button-blue'>
+          <button type='submit' disabled={!formComplete}  className='button-blue'>
             Continue
           </button>
           <div className='space'></div>
