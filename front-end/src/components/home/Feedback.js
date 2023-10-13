@@ -11,7 +11,7 @@ function Feedback() {
 
    <div className='sign_up_container'>
      <h5 className='describe-h-text'>Feedback Form</h5>
-     <h1 className='phone-number-note2'>Please give us your feedback</h1>
+     <h1 className='phone-number-note2'>Please give your feedback</h1>
      <form className='form'>
          <label>Full Name</label>
          <input type='text' />
