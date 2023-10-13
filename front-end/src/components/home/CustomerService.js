@@ -25,7 +25,7 @@ function CustomerService() {
           
           
         
-          <Link className='link' to='whatsapp://send?phone=+2349019971557'>  
+          <Link className='link5' to='whatsapp://send?phone=+2349019971557'>  
           <button className='nav-button2'>
           <div className='split-customer1'>
             <span>Reach us on whatsapp</span>
@@ -36,7 +36,7 @@ function CustomerService() {
           </Link>
        
 
-          <Link className='link' to='mailto:rootsgotyou@gmail.com'> 
+          <Link className='link5' to='mailto:rootsgotyou@gmail.com'> 
             <button className='nav-button2'>
               <div className='split-customer1'>
                 <span className='nav-tit'>Send us an Email</span>
