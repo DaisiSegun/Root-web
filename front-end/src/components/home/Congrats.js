@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios'; // Import Axios
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 import './signup.css';
@@ -47,7 +48,7 @@ console.log( apiUrl)
       </div>
       <img className='congrats-gif' src='/images/congrats.gif' alt="Congrats GIF" />
       <p className='place-order'>
-        Your order has been placed. Please call or message these numbers: <span className='call-blue'> +2349019971557, +2348069100884</span> to confirm your order
+        Your order has been placed. Please call or message these numbers:  <Link className='link' to='whatsapp://send?phone=+2349019971557'> <span className='call-blue'> +2349019971557, +2348069100884</span></Link> to confirm your order
       </p>
       <button className='button-blue3' onClick={handleContinueClick}>Continue</button>
     </div>
