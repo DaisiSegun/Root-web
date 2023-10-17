@@ -100,7 +100,7 @@ exports.register = async (req, res, next) => {
     }
     
     )
-        res.status(200).json({message:"Registered successfully "})
+        res.status(200).json({message:"Registered successfully ", name: fullName})
     } catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Server error' });
