@@ -13,13 +13,14 @@ function Categories() {
         <CategoryItem item={item} key={item.id} />
       ))}
         
-          {/* <nav className='nav'>
-          {/* <Link className='link' to='/others'>
+          <nav className='nav'>
+           <Link className='link' to='/others'>
           <button className='nav-button'>
-            <span className='nav-tit'>Others</span>
+            <span className='nav-tit'>My iPhone’s issue isn’t listed</span>
             <img className='nav-icon-04' src='./images/nav-blue.svg'/>
           </button>
-          </Link> */}
+          </Link>
+          </nav>
           
     
         <div className='headers-02'>Suggested Repairs</div>

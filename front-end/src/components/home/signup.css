@@ -693,3 +693,17 @@ margin-bottom: 1rem;
   cursor: not-allowed; /* Change the cursor to not-allowed */
   /* You can add other styles as needed */
 }
+.not-cus{
+  background-color: #ff9900; /* Background color (you can change this) */
+  color: #fff; /* Text color */
+  padding: 10px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center-align the text */
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2.5rem;
+  font-weight: bold; /* Make the label text bold */
+  display: block;
+}
