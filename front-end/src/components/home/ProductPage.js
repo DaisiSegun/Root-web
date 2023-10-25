@@ -49,7 +49,7 @@ function ProductPage() {
    
     const getProduct = async () => {
       try {
-        const response = await axios.get(`/okay/view-single/${id}`);
+        const response = await axios.get(`/api2/view-single/${id}`);
         setProduct(response.data);
       } catch (error) {
         setError('Error fetching product data');

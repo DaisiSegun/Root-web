@@ -16,7 +16,7 @@ function Search() {
     // Make an API call to fetch search results based on the 'query' parameter
     const fetchSearchResults = async () => {
       try {
-        const response = await axios.get(`/okay/search-products?query=${query}`);
+        const response = await axios.get(`/api2/search-products?query=${query}`);
         setSearchResults(response.data);
       } catch (error) {
         console.error('Error fetching search results:', error);

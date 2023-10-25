@@ -11,7 +11,7 @@ function Screen({ category }) {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('/okay/view-all');
+        const res = await axios.get('/api2/view-all');
         setProducts(res.data);
       } catch (err) {
         console.error(err);

@@ -14,7 +14,7 @@ function Main({ category }) {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          category ? `/okay/view-all?category=${category}` : '/okay/view-all'
+          category ? `/api2/view-all?category=${category}` : '/api2/view-all'
         );
         const shuffledProducts = shuffle(res.data);
         const selectedProducts = shuffledProducts.slice(0, 4);

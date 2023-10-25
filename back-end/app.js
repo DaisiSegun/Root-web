@@ -36,7 +36,7 @@ mongoose.connect(process.env.MONGO_URL).then((result) => {
 
 // Route Middlewares
 app.use('/api', authRoute);
-app.use('/okay', productRoute);
+app.use('/api2', productRoute);
 app.use('/api', cartRoute);
 app.use('/api', paymentRoute);
 app.use('/api', orderRoute);
