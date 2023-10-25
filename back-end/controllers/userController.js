@@ -130,7 +130,7 @@ exports.register = async (req, res, next) => {
         httpOnly: true
       });
   
-      res.status(200).json({ message: "Login successfull", name: user.fullName, userRole: user.role});
+      res.status(200).json({ message: "Logged in", name: user.fullName, userRole: user.role});
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: "Server error" });
