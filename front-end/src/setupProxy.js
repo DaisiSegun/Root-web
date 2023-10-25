@@ -3,11 +3,16 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function (app) {
   // Proxy requests to /api to the first API
   app.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'https://api.rootgroup.org"', // Replace with your first API URL
-      changeOrigin: true,
-    })
+    (req, res, next) => {
+      if (req.path.startsWith('/api')) {
+        createProxyMiddleware({
+          target: 'https://api.rootgroup.org', // Replace with your first API URL
+          changeOrigin: true,
+        })(req, res, next);
+      } else {
+        next();
+      }
+    }
   );
 
   // Proxy requests to /api2 to the second API
@@ -19,5 +24,6 @@ module.exports = function (app) {
     })
   );
 };
+
 // "proxy": "https://api.rootgroup.org/",
 // "proxy": "http://localhost:4000",
