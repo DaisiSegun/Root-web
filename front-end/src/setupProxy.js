@@ -1,10 +1,20 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function(app) {
+module.exports = function (app) {
+  // Proxy requests to /api to the first API
   app.use(
-    '/api', // Specify the API path you want to proxy
+    '/api',
     createProxyMiddleware({
-      target: 'https://api.rootgroup.org', // The URL of your external API
+      target: 'https://api.rootgroup.org"', // Replace with your first API URL
+      changeOrigin: true,
+    })
+  );
+
+  // Proxy requests to /api2 to the second API
+  app.use(
+    '/api2',
+    createProxyMiddleware({
+      target: 'https://api.rootgroup.org', // Replace with your second API URL
       changeOrigin: true,
     })
   );
