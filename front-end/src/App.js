@@ -45,6 +45,7 @@ import UploadRepair from './admin/UploadRepair';
 import Order from './admin/Order';
 import AllOrder from './admin/AllOrder';
 import PrivacyPolicy from './components/home/PrivacyPolicy';
+import SignUpCart from './components/home/SignUpCart';
 
 
 
@@ -72,7 +73,8 @@ function App() {
           <Route path='/battery' element={<Battery/>}/>
           <Route path='/chargingport' element={<ChargingPort/>}/>
           <Route path='/backglass' element={<RearGlass/>}/>
-          <Route path='/searchresult' element={<Search/>}/>
+          <Route path="/search" element={<Search />} />
+
           <Route path='/menu' element={<Menu/>}/>
           <Route path='/customerservice' element={<CustomerService/>}/>
           <Route path='/feedback' element={<Feedback/>}/>
@@ -100,6 +102,7 @@ function App() {
           <Route path='/order' element={<Order/>}/>
           <Route path='/allorder' element={<AllOrder/>}/>
           <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+          <Route path='/please-signup' element={<SignUpCart/>}/>
           
           
         </Routes>

@@ -245,18 +245,18 @@
 
 .red-box {
   background-color: #ffcccc; /* Lighter red background color */
-  color: red; /* Red text color */
+  color: #b32e2e; /* Red text color */
   padding: 10px;
   border-radius: 5px;
   text-align: center;
   margin-left: 1.45rem;
   margin-right: 1.45rem;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
 }
 .red-box2 {
   background-color: #ffcccc; /* Lighter red background color */
-  color: red; /* Red text color */
+  color: #b32e2e; /* Red text color */
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -266,5 +266,5 @@
   margin-bottom: 1rem;
   margin-top: -0.5rem;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 10px;
 }

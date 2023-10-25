@@ -2,18 +2,16 @@ import React, { useEffect, useState } from 'react';
 import './main.css';
 import Product from './Product';
 import axios from 'axios';
-import { useAuthContext } from '../../hooks/useAuthContext';
 
 function Screen({ category }) {
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4; // Change this based on your preference
-  const { user } = useAuthContext();
 
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('/api/view-all');
+        const res = await axios.get('/okay/view-all');
         setProducts(res.data);
       } catch (err) {
         console.error(err);
@@ -42,12 +40,6 @@ function Screen({ category }) {
 
   return (
     <div>
-      {!user && (
-        <div className='red-box'>
-          <h3>Please Register to view Categories. Thank you</h3>
-        </div>
-      )}
-
       <div className='main-row'>
         {productsToDisplay.map((item) => (
           <Product item={item} key={item.id} />

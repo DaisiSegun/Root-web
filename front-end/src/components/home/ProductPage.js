@@ -2,43 +2,54 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './productpage.css';
 import Header from '../header/Header';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from './CartContext'; 
+import { useAuthContext } from '../../hooks/useAuthContext';
+
+
 
 function ProductPage() {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
+  const { user } = useAuthContext();
+  const navigate = useNavigate();  
 
-
- const handleAddToCart = async () => {
-
-    try {
-      const response = await axios.post('/api/cart/add', {
-        productID: product._id,
-        quantity: 1,
-      });
-
-      console.log('Product added to cart:', response);
-
-      if (response.status === 201) {
-        setError(null);
-        window.alert('Product added to cart successfully! Click the cart button');
-      } else {
-        window.alert('Error adding product to cart.');
-      }
-    } catch (error) {
-      setError('Error adding product to cart: ' + error.response?.data.error || 'An error occurred.');
-      console.error(error);
+  const handleAddToCart = async () => {
+    
+ 
+    if (!user) {
+       // If the user is not authenticated, navigate to the registration page.
+       navigate('/please-signup'); // Update the route as per your registration page's route.
+    } else {
+       try {
+          const response = await axios.post('/api/cart/add', {
+             productID: product._id,
+             quantity: 1,
+          });
+ 
+          console.log('Product added to cart:', response);
+ 
+          if (response.status === 201) {
+             setError(null);
+             window.alert('Product added to cart successfully! Click the cart button');
+          } else {
+             window.alert('Error adding product to cart.');
+          }
+       } catch (error) {
+          setError('Error adding product to cart: ' + error.response?.data.error || 'An error occurred.');
+          console.error(error);
+       }
     }
-  };
+ };
+ 
 
   useEffect(() => {
-    console.log(product)
+   
     const getProduct = async () => {
       try {
-        const response = await axios.get(`/api/view-single/${id}`);
+        const response = await axios.get(`/okay/view-single/${id}`);
         setProduct(response.data);
       } catch (error) {
         setError('Error fetching product data');

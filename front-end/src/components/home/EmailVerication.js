@@ -14,12 +14,12 @@ function  EmailVerication() {
         <img className='email' src='/images/email.gif'/>
         <h1 className='reset-note2'>We have sent a password recovery instruction to your email.</h1>
   
-            <Link to='/createnewpassword'>
+            {/* <Link to='/createnewpassword'>
             <button className='button-blue'>Send Instuctions</button>
             </Link>
 
-            <h1 className='resend-code'>Resend Instruction</h1>
-
+            <h1 className='resend-code'>Resend Instruction</h1> */}
+<div className='space'></div>
     </div>
     </div>
   )

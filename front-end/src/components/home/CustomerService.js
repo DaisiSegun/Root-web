@@ -15,12 +15,14 @@ function CustomerService() {
           <div className='split-customer'>
           
           <button className='nav-button2'>
+          <a href='tel:+2349019971557'>
           <div className='split-customer1'>
             <span className='nav-tit'>Call Us </span> 
             <img src='/images/call-us.svg'/>
             <span className='nav-reach'>+2349019971557</span> 
             <span className='nav-reach'>+2348069100884</span>
             </div> 
+            </a>
           </button>
           
           

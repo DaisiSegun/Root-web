@@ -9,14 +9,13 @@ const productRoute = require('./routes/product')
 const orderRoute = require('./routes/order')
 const cartRoute = require('./routes/cart')
 const paymentRoute = require('./routes/payment')
+const controlRoute = require('./routes/control')
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(cors());
 
 
 // mongoose connection
@@ -37,7 +36,8 @@ mongoose.connect(process.env.MONGO_URL).then((result) => {
 
 // Route Middlewares
 app.use('/api', authRoute);
-app.use('/api', productRoute);
+app.use('/okay', productRoute);
 app.use('/api', cartRoute);
 app.use('/api', paymentRoute);
 app.use('/api', orderRoute);
+app.use('/api', controlRoute)

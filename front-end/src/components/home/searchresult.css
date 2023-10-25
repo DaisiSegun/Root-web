@@ -73,3 +73,11 @@ padding-right: 0.25rem;
   margin-top: 0.75rem;
   cursor: pointer;
   }
+  .no-products-message {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 2.5rem;
+    color: #555; /* You can adjust the color to your preference */
+  }
+  

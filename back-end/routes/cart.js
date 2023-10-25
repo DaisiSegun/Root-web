@@ -5,15 +5,15 @@ const userController = require('../controllers/userController.js');
 const cartController = require('../controllers/cartController.js');
 const { verifyUserToken, IsUser, IsAdmin } = require('../middlewares/auth')
 
-router.get('/cart/view', IsUser, cartController.view_cart);
+router.get('/cart/view', cartController.view_cart);
 router.use(verifyUserToken)
 
 // Define cart routes here
-router.post('/cart/add', IsUser, cartController.add_to_cart);
+router.post('/cart/add',  cartController.add_to_cart);
 
 
 
-router.delete('/cart/remove/:id', IsUser, cartController.remove_selectedProduct);
+router.delete('/cart/remove/:id',  cartController.remove_selectedProduct);
 
 
 module.exports = router;

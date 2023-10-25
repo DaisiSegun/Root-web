@@ -29,6 +29,10 @@
   margin-bottom: 1.5rem;
   
   }
+  .link {
+    padding: 0;
+    margin: 0;
+  }
   .register_note {
     color: rgba(0, 0, 0, 0.50);
     font-family: Open Sans;
@@ -192,6 +196,27 @@
     line-height: normal;
     cursor: pointer;
     align-self: center;
+    align-items: center;
+  }
+  .button-blue6 {
+    width: 20.4375rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    background: var(--primary-blue-01, #1172CC);
+    border-style: none;
+    margin-top: 2.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1.12rem;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    align-self: center;
+    align-items: center;
   }
   .button-blue5 {
     width: 20.4375rem;
@@ -406,14 +431,14 @@
   margin-bottom: 1rem;
   text-align: center;
   width: 14.5625rem;
-  margin-left:2.5rem ;
+  margin-left:0.5rem ;
 
   
 }
 .email {
   width: 11.5rem;
   height: 10.1875rem;
-  margin-left: 4rem;
+  margin-left: 2rem;
 }
 .space3 {
   margin-bottom: 1rem;
@@ -501,7 +526,7 @@ line-height: 2.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
 
 }
@@ -533,6 +558,17 @@ line-height: 2.5rem;
   line-height: 0.75rem;
   height: 2.5rem;
   cursor: pointer;
+}
+.btn4 {
+  padding: 10px;
+  background:  #1172CC;
+  border: 1px solid #3B95ED;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+ 
+ 
+
 }
 .change-pass{
 color: #000;
@@ -707,3 +743,34 @@ margin-bottom: 1rem;
   font-weight: bold; /* Make the label text bold */
   display: block;
 }
+.message-container {
+  background: #f8d7da; /* Background color for both success and error messages */
+  color: #721c24; /* Text color for both success and error messages */
+  padding: 10px;
+  border: 1px solid #f5c6cb; /* Border color for both success and error messages */
+  border-radius: 4px;
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: bold;
+  align-self: center;
+  align-items: center;
+  font-size: 10px;
+}
+.message-container1 {
+  border-color: #c3e6cb; /* Background color for both success and error messages */
+  background-color: #c3e6cb;
+  color: #155724; /* Text color for both success and error messages */
+  padding: 10px;
+  border: 1px solid #c3e6cb; /* Border color for both success and error messages */
+  border-radius: 4px;
+  margin-top: 10px; 
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: bold;
+  align-self: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+

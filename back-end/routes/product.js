@@ -2,6 +2,37 @@ const router = require("express").Router();
 const cloudinary = require("../utils/cloudinary");
 const upload = require("../utils/multer");
 const User = require("../models/Product");
+router.get("/view-single/:id", async (req, res) => {
+  try {
+    // Find the product by id
+    let product = await User.findById(req.params.id);
+    
+    if (!product) {
+      // If the product is not found, return a 404 response
+      return res.status(404).json({ message: "Product not found" });
+    }
+
+    // Return the product data
+    res.status(200).json(product);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+router.get("/search-products", async (req, res) => {
+  const { query } = req.query; // Get the search query from the request query parameters
+
+  try {
+    // Use a regular expression to perform a case-insensitive search for products
+    const products = await User.find({
+      name: { $regex: new RegExp(query, "i") },
+    });
+
+    res.status(200).json(products);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 const { verifyUserToken, IsUser, IsAdmin } = require('../middlewares/auth')
 
 router.get("/view-all", async (req, res) => {
@@ -27,6 +58,7 @@ router.get("/view-all", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.use(verifyUserToken)
 
 router.post("/create-product", IsAdmin, upload.single("image"), async (req, res) => {
@@ -107,14 +139,6 @@ router.put("/chnage-image/:id", IsAdmin, upload.single("image"), async (req, res
   }
 });
 
-router.get("/view-single/:id", IsUser, async (req, res) => {
-  try {
-    // Find user by id
-    let user = await User.findById(req.params.id);
-    res.json(user);
-  } catch (err) {
-    console.log(err);
-  }
-});
+
 
 module.exports = router;

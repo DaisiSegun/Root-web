@@ -9,7 +9,7 @@ function Cart() {
   const { cartItems, handleRemoveCartItem, fetchCartData } = useContext(CartContext);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  console.log(cartItems);
+  
 
   // const fetchCartData = () => {
   //   axios
