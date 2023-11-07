@@ -125,7 +125,14 @@ width: max-content;
     object-fit: contain;
   }
 
- 
+  .smalli {
+    stroke-width: 2px;
+  stroke: rgba(0, 0, 0, 0.90);
+  font-size: 0.875rem;
+  font-weight: 400;
+  padding-right: 0.25rem;
+  
+  }
   .cat-price {
     display: flex;
   
