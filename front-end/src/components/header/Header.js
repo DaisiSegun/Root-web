@@ -58,7 +58,7 @@ function Header() {
           ref={inputRef}
           className="search"
           type="text"
-          placeholder="Search for any Apple r epair"
+          placeholder="Search for any Apple repair"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyPress={handleKeyPress} // Add event listener for Enter key
