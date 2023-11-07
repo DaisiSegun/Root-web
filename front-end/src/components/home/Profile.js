@@ -7,10 +7,10 @@ import Header from '../header/Header'
 function Profile() {
   return (
     <div className='main'>
-    <div className='menu-container'>
+  
       <Header/>
-      <hr className='line'></hr>
-      <div className='nav-container'>
+      {/* <hr className='line'></hr> */}
+      <div className='nav-container3'>
         <h1 className='headers'>Profile</h1>
         <nav className='nav'>
           <div className='split-customer'>
@@ -34,7 +34,7 @@ function Profile() {
         </nav>
         
         </div>
-      </div>
+    
   </div>
   )
 }

@@ -566,7 +566,7 @@ cursor: pointer;
 
   
 }
-.search-order {
+.search-order2 {
   width: 268px;
   height: 32px;
   border-radius: 5px;
@@ -937,4 +937,36 @@ a {
   border-radius: 5px;
   border-width: 1px;
   background-color: white;
+}
+.btnedit {
+  background-color: #3B95ED;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
+}
+.btnedit2 {
+  background-color: #FFA011;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
+}
+.btnsave {
+  background-color: #0F253B;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
+  margin-left: 1rem;
+}
+.isedit{
+  margin-left: 2rem;
+}
+.edit-product-modal {
+  margin-left: 2rem;
+  margin-top: 8.5rem;
 }

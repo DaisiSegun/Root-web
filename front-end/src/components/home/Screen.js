@@ -39,7 +39,7 @@ function Screen({ category }) {
   };
 
   return (
-    <div>
+    <div className='main'>
       <div className='main-row'>
         {productsToDisplay.map((item) => (
           <Product item={item} key={item.id} />

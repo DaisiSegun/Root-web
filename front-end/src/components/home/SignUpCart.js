@@ -21,9 +21,15 @@ function SignUpCart() {
             <Link to='/signup'>
             <button className='button-blue'>Register</button>
             </Link>
-            <div className='space'></div>
+          
 
-      
+            <p className='terms03'>Already have an account?     
+            <Link className='link' to='/signin'>
+            <span className='terms_condition02'> Sign in</span>
+            </Link>
+             </p>
+             <div className='space'></div>
+            
     </div>
   )
 }

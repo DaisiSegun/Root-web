@@ -5,7 +5,8 @@ function SearchResult({ avatar, name,  price }) {
   return (
     <div className='search-container'>
       
-      <img className='search-img' src={avatar} />
+      
+      {/* <img className='search-img' src={avatar} /> */}
 
       <div className='search-description'>
         <p className='search-title'>{name}</p>

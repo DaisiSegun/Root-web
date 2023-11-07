@@ -10,7 +10,7 @@ function ScreenCat({title, image, price}) {
        <p className='cat-p'> {title}</p>
       <div className='cat-price'>
           <small> ₦</small>
-           <strong>{price}</strong>
+           <small>{price}</small>
         </div>
         
       

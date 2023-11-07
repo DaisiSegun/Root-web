@@ -42,6 +42,7 @@ import ErrorProfile from './components/home/ErrorProfile';
 import Login from './admin/Login';
 import Dashboard from './admin/Dashboard';
 import UploadRepair from './admin/UploadRepair';
+import Inventory from './admin/Inventory';
 import Order from './admin/Order';
 import AllOrder from './admin/AllOrder';
 import PrivacyPolicy from './components/home/PrivacyPolicy';
@@ -99,6 +100,7 @@ function App() {
           <Route path='/admin' element={<Login/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
           <Route path='/upload-repair' element={<UploadRepair/>}/>
+          <Route path='/inventory' element={<Inventory/>}/>
           <Route path='/order' element={<Order/>}/>
           <Route path='/allorder' element={<AllOrder/>}/>
           <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>

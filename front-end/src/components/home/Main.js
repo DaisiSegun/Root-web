@@ -29,15 +29,21 @@ function Main({ category }) {
 
   return (
     <div className='main'>
+
       <Header />
-      <hr className='line'></hr>
+
+      <div className='home-row'>
+      {/* <hr className='line'></hr> */}
       <Categories />
       <div className='main-row'>
+      <div className='headers-02'>Suggested Repairs</div>
         {products.slice(0, 4).map((item) => (
           <Product item={item} key={item.id} />
         ))}
       </div>
       <div className='space'></div>
+
+      </div>
     </div>
   );
 }

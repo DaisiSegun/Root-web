@@ -15,7 +15,7 @@ function CartItem({ item }) {
     
     <div id={item._id} className='search-col'>
       <div className='search-container'> 
-        <img src={avatar} className='search-img'/>
+        {/* <img src={avatar} className='search-img'/> */}
         <div className='search-description'> 
           <p className='search-title'>{name}</p>
           <div className='search-price'>

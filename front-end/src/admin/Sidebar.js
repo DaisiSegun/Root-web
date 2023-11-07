@@ -1,8 +1,23 @@
 import React from 'react'
 import './sidebar.css'
 import './pages.css'
+import axios from 'axios';
 import { Link } from 'react-router-dom'
 function Sidebar() {
+  function handleLogout() {
+    // Make an API request to log the user out
+    axios.post('/api/logout') // Replace with your actual logout endpoint
+      .then((response) => {
+        // Handle the success response, e.g., clear user session or do other tasks
+        console.log(response.data); // You can log the response for debugging
+        // Redirect to the login page or perform other actions after logout
+      })
+      .catch((error) => {
+        // Handle any errors from the API request
+        console.error(error);
+      });
+  }
+  
   return (
     <div className='sidebar-container'>
         <img className='logo1' src='./images/logo.jpg'/>
@@ -17,8 +32,8 @@ function Sidebar() {
     <div className='nav-select2'>
       
         <img src='./images/orders.svg' className='nav-icon2'/> <p className='nav-text'>Orders </p>
-        <div className='not2'>
-      </div>
+        {/* <div className='not2'>
+      </div> */}
         
       
       </div>
@@ -38,9 +53,12 @@ function Sidebar() {
     </Link>
       
     
-      <div className='nav-select2'>
-        <img src='./images/log-out.svg' className='nav-icon2'/> <p className='nav-text'>Log out</p>
-      </div>
+    <Link to="#" onClick={handleLogout}>
+  <div className='nav-select2'>
+    <img src='./images/log-out.svg' className='nav-icon2'/> <p className='nav-text'>Log out</p>
+  </div>
+</Link>
+
 
     </nav>
     </div>

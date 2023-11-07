@@ -7,12 +7,14 @@ function Product({item}) {
     <div className='product-category'>
       
      <Link className='link' to={`/product/${item._id}`}>
-       <img className='cat-img' src={item.avatar}/>
+      <div className='fus'>
+       {/* <img className='cat-img' src={item.avatar}/> */}
        <p className='cat-p'> {item.name}</p>
       <div className='cat-price'>
-          <small> ₦</small>
-           <strong>{item.price}</strong>
-        </div>  
+          <small className='smalli'> ₦</small>
+           <small className='smalli'>{item.price}</small>
+        </div> 
+        </div> 
      </Link>
       
     </div>

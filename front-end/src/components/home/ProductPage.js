@@ -63,10 +63,10 @@ function ProductPage() {
   return (
     <div className='main'>
       <Header />
-      <hr className='line'></hr>
+      {/* <hr className='line'></hr> */}
       {product ? (
         <div>
-          <img className='product-img' src={product.avatar} alt={product.name} />
+          {/* <img className='product-img' src={product.avatar} alt={product.name} /> */}
         </div>
       ) : (
         <p className='loading-message'>Loading product image...</p>

@@ -5,6 +5,8 @@ import Header from '../header/Header';
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './signup.css'
+import './main.css'
 
 function Search() {
   const [searchResults, setSearchResults] = useState([]);
@@ -34,16 +36,16 @@ function Search() {
   return (
     <div className='main'>
       <Header />
-      <hr className='line'></hr>
+      {/* <hr className='line'></hr> */}
       <h5 className='search-header'>Result</h5>
       <div className='search-col'>
         {searchResults.length === 0 ? (
           <>
             <p className='no-products-message'>No repair found.</p>
             <div className='sign_up'>
-            <div className='sign_up_container'>
+            <div className='sign_up_container5'>
               <div className='space3'></div>
-              <h5 className='describe-h-text'>Can't find your iPhone repair?</h5>
+              <h5 className='describe-h-text'>Can't find your Apple product repair?</h5>
               <div className='space3'></div>
               <Link className='link5' to='whatsapp://send?phone=+2349019971557'>
                 <button className='nav-button2'>

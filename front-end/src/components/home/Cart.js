@@ -37,7 +37,7 @@ function Cart() {
   return (
     <div className='main'>
       <Header />
-      <hr className='line' />
+      {/* <hr className='line' /> */}
       <h5 className='search-header'>Cart</h5>
       <div>
       {/* <div className='red-box2'>

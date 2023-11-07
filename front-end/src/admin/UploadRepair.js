@@ -37,7 +37,7 @@ function UploadRepair() {
         formDataToSubmit.append('description', formData.description);
         formDataToSubmit.append('image', formData.image);
 
-        const response = await fetch('/api/create-product', {
+        const response = await fetch('/api2/create-product', {
           method: 'POST',
           body: formDataToSubmit,
         });

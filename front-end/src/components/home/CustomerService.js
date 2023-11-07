@@ -6,10 +6,10 @@ import Header from '../header/Header'
 function CustomerService() {
   return (
     <div className='main'>
-    <div className='menu-container'>
+  
       <Header/>
-      <hr className='line'></hr>
-      <div className='nav-container'>
+      {/* <hr className='line'></hr> */}
+      <div className='nav-container3'>
         <h1 className='headers'>Customer Service</h1>
         <nav className='nav'>
           <div className='split-customer'>
@@ -65,7 +65,7 @@ function CustomerService() {
         </nav>
         
         </div>
-      </div>
+     
   </div>
   )
 }

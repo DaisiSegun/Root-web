@@ -4,6 +4,7 @@ const Cart = require('../models/Cart')
 const product = require('../models/Product')
 const bcrypt = require('bcrypt')
 const nodemailer = require('nodemailer');
+const Product = require('../models/Product');
 
 function generateRandomToken(length) {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -146,3 +147,46 @@ exports.change_password = async (req,res) => {
         res.status(400).send({'error': 'cannot change password'})
     }
 }
+exports.update_product = async (req, res) => {
+    try {
+        const token = req.cookies.authcookie;
+        if (!token) {
+            return res.status(400).json({ error: 'User is not authenticated' });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_TOKEN);
+        const user = await User.findOne({ email: decoded.email });
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        const productId = req.body.productId;   
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        const { name, price, stock, category, description } = req.body;
+
+        if (name) product.name = name;
+        if (price) product.price = price;
+        if (stock) product.stock = stock;
+        if (category) product.category = category;
+        if (description) product.description = description;
+
+        if (req.file) {
+            await cloudinary.uploader.destroy(product.cloudinary_id);
+            const result = await cloudinary.uploader.upload(req.file.path);
+            product.avatar = result.secure_url;
+            product.cloudinary_id = result.public_id;
+        }
+
+        await product.save();
+        res.status(200).json({ message: "Product updated successfully" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};

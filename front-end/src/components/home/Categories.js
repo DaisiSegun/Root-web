@@ -16,14 +16,14 @@ function Categories() {
           <nav className='nav'>
            <Link className='link' to='/others'>
           <button className='nav-button'>
-            <span className='nav-tit'>My iPhone’s issue isn’t listed</span>
+            <span className='nav-tit'>My Apple product isn’t listed</span>
             <img className='nav-icon-04' src='./images/nav-blue.svg'/>
           </button>
           </Link>
           </nav>
           
     
-        <div className='headers-02'>Suggested Repairs</div>
+       
         </div>
     </div>
   )

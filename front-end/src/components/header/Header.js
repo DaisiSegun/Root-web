@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useLocation } from 'react-router-dom';
 import { useCart } from '../home/CartContext';
-import Img1 from '../../assets/img/root-full-07.jpg';
+import Img1 from '../../assets/img/root-final-logo.png';
 import Menu1 from '../../assets/img/menu.svg';
 import Cart1 from '../../assets/img/cart.svg';
 import Search1 from '../../assets/img/search.svg';
@@ -36,29 +36,29 @@ function Header() {
   return (
     <div className="header">
       <div className="section_top">
-        <Link className="link" to="/menu">
-          <img className="menu" src={Menu1} />
+      <Link className="link" to="/menu">
+      <div className="menu-container">
+    <img className="menu" src={Menu1} />
+    <div className="menu-text">Menu</div>
+  </div>
         </Link>
-
+      
         <Link className="link" to="/">
           <img className="logo" src={Img1} />
         </Link>
 
-        <Link className="link" to="/cart">
-          <div className="cart_container">
-            <p className="cart_text">Cart</p>
-            <img src={Cart1} />
-            {cartLength > 0 && <p className="cart_num">{cartLength}</p>}
-          </div>
-        </Link>
+       
+
+       
       </div>
 
       <div className="section_middle">
+      
         <input
           ref={inputRef}
           className="search"
           type="text"
-          placeholder="Search Root"
+          placeholder="Search for any Apple Repa"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyPress={handleKeyPress} // Add event listener for Enter key
@@ -73,12 +73,14 @@ function Header() {
             <button className="dark_button">Sign In</button>
           </Link>
 
-          <h1 className="hello">Hello </h1>
+          {/* <h1 className="hello">Hello </h1> */}
 
           {email && <p className="helloo">Email: {email}</p>}
-          <Link to="/signup" className="link">
+
+       
+          {/* <Link to="/signup" className="link">
             <button className="light_button">Register</button>
-          </Link>
+          </Link> */}
         </div>
       )}
 
@@ -98,9 +100,18 @@ function Header() {
               </div>
             )}
           </Link>
+        
         </div>
       )}
+        <Link to="/cart" className="link">
+      <div className="cart_container">
+            <p className="cart_text">Cart</p>
+            <img src={Cart1} />
+            {cartLength > 0 && <p className="cart_num">{cartLength}</p>}
+          </div>
+          </Link>
     </div>
+    
   );
 }
 

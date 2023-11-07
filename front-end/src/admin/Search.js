@@ -1,20 +1,40 @@
-import React from 'react'
-import './pages.css'
-import { Link } from 'react-router-dom'
-function Search() {
+import React, { useRef } from 'react';
+
+function Search({ value, onChange, onSearch }) {
+  const inputRef = useRef(null);
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      onSearch();
+    }
+  };
+
+  const handleClick = () => {
+    console.log('Search button clicked'); // Debugging log
+    onSearch();
+  };
+
   return (
-    <div className='search-container'> 
-    <input className='search2' type='text' placeholder='Search'/>
-    <div className='search_icon_container'>
-    
-    <Link className='link' to='/searchresult'>
-      <img className='search_icon' src='./images/search.svg'/>
-    </Link>
-    
+    <div className="search-container2">
+      <input
+        className="search2"
+        ref={inputRef}
+        type="text"
+        placeholder="Search Root"
+        value={value}
+        onChange={onChange}
+        onKeyPress={handleKeyPress}
+      />
+      <div className="search_icon_container2">
+        <img
+          className="search_icon2"
+          src="./images/search.svg"
+          alt="Search"
+          onClick={handleClick}
+        />
+      </div>
     </div>
-    
-  </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

@@ -11,5 +11,5 @@ router.put('/update-user', IsUser, contolController.update_user)
 
 
 router.put('/forgot-password/change-password', IsUser, contolController.change_password)
-
+router.put('/update-product', IsAdmin, contolController.update_product) 
 module.exports = router;

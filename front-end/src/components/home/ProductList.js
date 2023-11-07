@@ -16,8 +16,8 @@ function ProductList() {
   return (
     <div className='main'>
       <Header/>
-      <hr className='line'></hr>
-      <h5 className='cat-header'>{cat}</h5>
+      {/* <hr className='line'></hr> */}
+      {/* <h5 className='cat-header'>{cat}</h5> */}
       <Screen category={cat} />
 
     </div>

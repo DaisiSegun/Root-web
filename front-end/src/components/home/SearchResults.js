@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchResult from './SearchResult';
 import { Link } from 'react-router-dom';
+import './searchresult.css';
 
 function SearchResults({ results }) {
   return (

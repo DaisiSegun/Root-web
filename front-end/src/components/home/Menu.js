@@ -29,10 +29,10 @@ function Menu() {
   };
   return (
     <div className='main'>
-    <div className='menu-container'>
+ 
       <Header/>
-      <hr className='line'></hr>
-      <div className='nav-container'>
+      {/* <hr className='line'></hr> */}
+      <div className='nav-container3'>
         <h1 className='headers'>Menu</h1>
         <nav className='nav'>
           <div className='bottom'>
@@ -55,7 +55,7 @@ function Menu() {
         </nav>
         
         </div>
-      </div>
+      
   </div>
   )
 }
