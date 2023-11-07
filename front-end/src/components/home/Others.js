@@ -12,7 +12,7 @@ function Others() {
        
 
       <div className='sign_up_container'>
-        <h5 className='describe-h-text'>Can't find your Apple product repair?</h5>
+        <h5 className='describe-h-text'>Can't find your Apple device repair?</h5>
         <div className='space3'></div>
         <Link className='link5' to='whatsapp://send?phone=+2349019971557'>  
           <button className='nav-button2'>
