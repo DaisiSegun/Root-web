@@ -17,7 +17,7 @@ function Welcome() {
         <img className='welcome-image' src='./images/welcome-root.svg'/>
         <p className='welcome-text'>Welcome to Root</p>
         <p className='welcome-user'> {location.state.id}!</p>
-        <p className='welcome-text2'>You can now repair your iPhone</p>
+        <p className='welcome-text2'>You can now repair your Apple device</p>
             <Link to='/'>
             <button className='button-blue'>Go Home</button>
             </Link>
