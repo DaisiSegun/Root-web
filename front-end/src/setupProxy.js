@@ -6,7 +6,7 @@ module.exports = function (app) {
     (req, res, next) => {
       if (req.path.startsWith('/api')) {
         createProxyMiddleware({
-          target: 'https://api.rootgroup.org', // Replace with your first API URL
+          target: 'http://localhost:4000', // Replace with your first API URL
           changeOrigin: true,
         })(req, res, next);
       } else {
@@ -19,7 +19,7 @@ module.exports = function (app) {
   app.use(
     '/api2',
     createProxyMiddleware({
-      target: 'https://api.rootgroup.org', // Replace with your second API URL
+      target: 'http://localhost:4000', // Replace with your second API URL
       changeOrigin: true,
     })
   );

@@ -19,20 +19,20 @@ app.use(bodyParser.json());
 
 
 // mongoose connection
-mongoose.connect(process.env.MONGO_URL).then((result) => {
-    console.log('----------------------------------------------')
-    console.log('conneted to mongo db alas')
-    app.listen(process.env.PORT,() => {
-        console.log('listening on port: ' + process.env.PORT)
-        console.log('----------------------------------------------')
-    })
-}).catch((err) => {
-    console.log('----------------------------------------------')
-    console.log('database connection failled. exiting now....')
-    console.log('----------------------------------------------')
-    console.log(err)
-    process.exit(1)
-})
+// mongoose.connect(process.env.MONGO_URL).then((result) => {
+//     console.log('----------------------------------------------')
+//     console.log('conneted to mongo db alas')
+//     app.listen(process.env.PORT,() => {
+//         console.log('listening on port: ' + process.env.PORT)
+//         console.log('----------------------------------------------')
+//     })
+// }).catch((err) => {
+//     console.log('----------------------------------------------')
+//     console.log('database connection failled. exiting now....')
+//     console.log('----------------------------------------------')
+//     console.log(err)
+//     process.exit(1)
+// })
 
 // Route Middlewares
 app.use('/api', authRoute);

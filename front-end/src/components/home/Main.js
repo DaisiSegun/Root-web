@@ -6,6 +6,7 @@ import Categories from './Categories';
 import Product from './Product';
 import axios from 'axios';
 import { shuffle } from 'lodash';
+import CustomerTestimonal from './CustomerTestimonal';
 
 function Main({ category }) {
   const [products, setProducts] = useState([]);
@@ -44,6 +45,8 @@ function Main({ category }) {
       <div className='space'></div>
 
       </div>
+      {/* <CustomerTestimonal/> */}
+      <div className='space'></div>
     </div>
   );
 }
